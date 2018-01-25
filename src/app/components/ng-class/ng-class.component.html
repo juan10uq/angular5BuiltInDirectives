@@ -1,0 +1,69 @@
+<div class="container">
+  <h1>
+    {{title}}
+  </h1>
+
+  <br>
+  <div class="row">
+    <div class="col-lg-4">
+
+      <!--class binding for ClassName-->
+      <h3>Class Binding using 'className' directive</h3>
+
+      <!--call the ngclass object to add a class name to it. -->
+      <div [className]="'style1'"> I would be classed using classname</div>
+    </div>
+    <pre class="col-lg-8"><code>
+      &lt;!--class binding for ClassName--&gt;
+      &lt;h3&gt;Class Binding using &apos;className&apos; directive&lt;/h3&gt;
+
+      &lt;!--call the ngclass object to add a class name to it. --&gt;
+      &lt;div [className]=&quot;&apos;style1&apos;&quot;&gt; I would be classed using classname&lt;/div&gt;
+    </code></pre>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <!--class binding for ClassName-->
+      <h3>Class Binding using 'className' directive and variable</h3>
+
+      <!--call the ngclass object to add a class name to it. -->
+      <div [className]="my_Class"> I would be classed using classname</div>
+      <br >
+      <button (click)="toggle_class()">Toggle_class</button>
+    </div>
+    <pre class="col-lg-8"><code>
+      &lt;!--class binding for ClassName--&gt;
+      &lt;h3&gt;Class Binding using &apos;className&apos; directive and variable&lt;/h3&gt;
+
+      &lt;!--call the ngclass object to add a class name to it. --&gt;
+      &lt;div [className]=&quot;my_Class&quot;&gt; I would be classed using classname&lt;/div&gt;
+      &lt;button (click)=&quot;toggle_class()&quot;&gt;Toggle_class&lt;/button&gt;
+    </code></pre>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <!-- class binding using ngclass -->
+      <h3> Class Binding using 'ngClass' directive with objects and variables</h3>
+
+      <!--call the classes in the objects and their value -->
+      <div [ngClass]="{'style1': isClass1Visible, 'style2': isClass2Visible}">object of classes</div>
+
+      <br >
+      <!--button to toggle style1 -->
+      <button (click)="isClass1Visible = !isClass1Visible;">Toggle style 1</button>
+
+      <!-- button to toggle style2 -->
+      <button (click)="isClass2Visible = !isClass2Visible;">Toggle style 2</button>
+    </div>
+    <pre class="col-lg-8"><code>
+      &lt;!--call the classes in the objects and their value --&gt;
+      &lt;div [ngClass]=&quot;&apos;style1&apos;: isClass1Visible, &apos;style2&apos;: isClass2Visible&quot;&gt;object of classes&lt;/div&gt;
+
+      &lt;!--button to toggle style1 --&gt;
+      &lt;button (click)=&quot;isClass1Visible = !isClass1Visible;&quot;&gt;Toggle style 1&lt;/button&gt;
+
+      &lt;!-- button to toggle style2 --&gt;
+      &lt;button (click)=&quot;isClass2Visible = !isClass2Visible;&quot;&gt;Toggle style 2&lt;/button&gt;
+    </code></pre>
+  </div>
+</div>

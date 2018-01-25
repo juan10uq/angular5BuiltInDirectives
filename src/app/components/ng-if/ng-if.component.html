@@ -1,0 +1,73 @@
+<div class="container">
+  <h1>
+    {{title}}
+  </h1>
+
+  <br>
+  <div class="row">
+    <div class="col-lg-4">
+      <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+      variable = {{show}}
+      <div *ngIf="show">Text to show</div>
+    </div>
+    <pre class="col-lg-8"><code>  &lt;button (click)=&quot;show = !show&quot;&gt;show ? 'hide' : 'show'&lt;/button&gt;<br/>  variable = show<br/>  &lt;br&gt;<br/>  &lt;div *ngIf=&quot;show&quot;&gt;Text to show&lt;/div&gt;
+  </code></pre>
+  </div>
+
+<div class="row">
+  <div class="col-lg-4">
+  1- Just Use If
+  <br>
+
+  <div *ngIf="isValid">
+    If isValid is true
+  </div>
+
+  <br>
+  2- Using If with Else (Please notice to templateName)
+  <br>
+
+  <div *ngIf="isValid; else templateName2">
+    If isValid is true
+  </div>
+  <ng-template #templateName2>
+    If isValid is false
+  </ng-template>
+  <br>
+  3- Using If with Then (Please notice to templateName)
+  <br>
+
+  <div *ngIf="isValid; then templateName3">
+    Here is never showing
+  </div>
+
+  <ng-template #templateName3>
+    If isValid is true
+  </ng-template>
+
+  <br>
+  4- Using If with Then and Else
+  <br>
+
+  <div *ngIf="isValid; then thenTemplateName; else elseTemplateName">
+    Here is never showing
+  </div>
+
+  <ng-template #thenTemplateName>
+    If isValid is true
+  </ng-template>
+
+  <ng-template #elseTemplateName>
+    If isValid is false
+  </ng-template>
+  <br>
+  <button (click)="isValid = !isValid">Toggle Valid</button>
+  </div>
+  <pre class="col-lg-8">
+    <code data-lang="html">
+      1- Just Use If<br/><br/>      &lt;div *ngIf=&quot;isValid&quot;&gt;<br/>        If isValid is true<br/>      &lt;/div&gt;<br/><br/>      2-Using If with Else (Please notice to templateName)<br/>      &lt;div *ngIf=&quot;isValid; else templateName&quot;&gt;<br/>        If isValid is true<br/>      &lt;/div&gt;<br/><br/>      &lt;ng-template #templateName&gt;<br/>        If isValid is false<br/>      &lt;/ng-template&gt;<br/><br/>      3- Using If with Then (Please notice to templateName)<br/>      &lt;div *ngIf=&quot;isValid; then templateName&quot;&gt;<br/>        Here is never showing<br/>      &lt;/div&gt;<br/><br/>      &lt;ng-template #templateName&gt;<br/>        If isValid is true<br/>      &lt;/ng-template&gt;<br/><br/>      4- Using If with Then and Else<br/>      &lt;div *ngIf=&quot;isValid; then thenTemplateName; else elseTemplateName&quot;&gt;<br/>        Here is never showing<br/>      &lt;/div&gt;<br/><br/>      &lt;ng-template #thenTemplateName&gt;<br/>        If isValid is true<br/>      &lt;/ng-template&gt;<br/><br/>      &lt;ng-template #elseTemplateName&gt;<br/>        If isValid is false<br/>      &lt;/ng-template&gt;
+    </code>
+    </pre>
+</div>
+  <br><br><br>
+</div>

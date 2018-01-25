@@ -1,0 +1,47 @@
+<div class="container">
+  <h1>
+    {{title}}
+  </h1>
+
+  <br>
+  <div class="row">
+    <div class="col-lg-4">
+      <ul>
+        <li *ngFor="let person of people">
+          {{ person.name }}
+        </li>
+      </ul>
+    </div>
+    <pre class="col-lg-8"><code>  &lt;ul&gt;<br/>    &lt;li *ngFor=&quot;let person of people&quot;&gt;<br/>       person.name <br/>    &lt;/li&gt;<br/>  &lt;/ul&gt;
+    </code></pre>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <ul>
+        <li *ngFor="let person of people; let i = index">
+          {{ i + 1 }} - {{ person.name }}
+        </li>
+      </ul>
+    </div>
+    <pre class="col-lg-8"><code>
+      &lt;ul&gt;<br/>        &lt;li *ngFor=&quot;let person of people; let i = index&quot;&gt;<br/>           i + 1  -  person.name <br/>        &lt;/li&gt;<br/>      &lt;/ul&gt;
+    </code></pre>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+      <ul *ngFor="let group of peopleByCountry">
+        <li>{{ group.country }}</li>
+        <ul>
+          <li *ngFor="let person of group.people">
+            {{ person.name }}
+          </li>
+        </ul>
+      </ul>
+    </div>
+    <pre class="col-lg-8"><code> &lt;ul *ngFor=&quot;let group of peopleByCountry&quot;&gt; <br/>   &lt;li&gt; group.country &lt;/li&gt;<br/>   &lt;ul&gt;<br/>    &lt;li *ngFor=&quot;let person of group.people&quot;&gt; <br/>       person.name <br/>    &lt;/li&gt;<br/>   &lt;/ul&gt;<br/> &lt;/ul&gt;
+    </code></pre>
+  </div>
+
+</div>

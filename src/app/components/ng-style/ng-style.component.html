@@ -1,0 +1,46 @@
+<div class="container">
+  <h1>
+    {{title}}
+  </h1>
+
+  <br>
+  <div class="row">
+    <div class="col-lg-4">
+      <!---style binding for colors -->
+      <h2>Style Binding using 'style.color' directive</h2>
+      <!--call the random color property to set the color of this div -->
+      <div [style.color]="randomColor"> I would be styled with different colors dynamically </div>
+      <!--attach a click function to this button to set the color dynamically -->
+      <button (click)="setColor()"> Set my color </button>
+    </div>
+    <pre class="col-lg-8"><code>
+      &lt;!---style binding for colors --&gt;
+      &lt;h2&gt;Style Binding using &apos;style.color&apos; directive&lt;/h2&gt;
+      &lt;!--call the random color property to set the color of this div --&gt;
+      &lt;div [style.color]=&quot;randomColor&quot;&gt; I would be styled with different colors dynamically &lt;/div&gt;
+      &lt;!--attach a click function to this button to set the color dynamically --&gt;
+      &lt;button (click)=&quot;setColor()&quot;&gt; Set my color &lt;/button&gt;
+    </code></pre>
+  </div>
+  <div class="row">
+    <div class="col-lg-4">
+      <h2>Style Binding using 'ngStyle' directive</h2>
+      <!--call the style object to style class -->
+      <div [ngStyle]="{ 'font-size': font_size, 'color': background_color }"> I would be styled with different colors dynamically </div>
+      <!--attach a click function to this button to set the style dynamically -->
+      <br>
+      <input type="text" [(ngModel)]="background_color" placeholder="background_color">
+      <input type="text" [(ngModel)]="font_size" placeholder="font_size">
+    </div>
+    <pre class="col-lg-8"><code>
+      &lt;!---style bindning for ngStyle --&gt;
+      &lt;h2&gt;Style Binding using &apos;ngStyle&apos; directive&lt;/h2&gt;
+      &lt;!--call the style object to style class --&gt;
+      &lt;div [ngStyle]=&quot; &apos;font-size&apos;: font_size, &apos;color&apos;: background_color &quot;&gt;
+      I would be styled with different colors dynamically &lt;/div&gt;
+      &lt;!--attach a click function to this button to set the style dynamically --&gt;
+      &lt;input type=&quot;text&quot; [(ngModel)]=&quot;background_color&quot; placeholder=&quot;background_color&quot;&gt;
+      &lt;input type=&quot;text&quot; [(ngModel)]=&quot;font_size&quot; placeholder=&quot;font_size&quot;&gt;
+    </code></pre>
+  </div>
+</div>

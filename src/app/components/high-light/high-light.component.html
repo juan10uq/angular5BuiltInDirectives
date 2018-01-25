@@ -1,0 +1,38 @@
+<h1>My First Attribute Directive</h1>
+
+<div class="container">
+  <h1>
+    {{title}}
+  </h1>
+
+  <br>
+  <div class="row">
+    <div class="col-lg-4">
+      <h4>Pick a highlight color</h4>
+      <div>
+        <input type="radio" name="colors" (click)="color='lightgreen'">Green
+        <input type="radio" name="colors" (click)="color='yellow'">Yellow
+        <input type="radio" name="colors" (click)="color='cyan'">Cyan
+      </div>
+      <br >
+      <p [appHighlight]="color">Highlight me!</p>
+
+      <p [appHighlight]="color" defaultColor="violet">
+        Highlight me too!
+      </p>
+    </div>
+    <pre class="col-lg-8"><code>
+      &lt;h4&gt;Pick a highlight color&lt;/h4&gt;
+      &lt;div&gt;
+      &lt;input type=&quot;radio&quot; name=&quot;colors&quot; (click)=&quot;color=&apos;lightgreen&apos;&quot;&gt;Green
+      &lt;input type=&quot;radio&quot; name=&quot;colors&quot; (click)=&quot;color=&apos;yellow&apos;&quot;&gt;Yellow
+      &lt;input type=&quot;radio&quot; name=&quot;colors&quot; (click)=&quot;color=&apos;cyan&apos;&quot;&gt;Cyan
+      &lt;/div&gt;
+      &lt;p [appHighlight]=&quot;color&quot;&gt;Highlight me!&lt;/p&gt;
+
+      &lt;p [appHighlight]=&quot;color&quot; defaultColor=&quot;violet&quot;&gt;
+      Highlight me too!
+      &lt;/p&gt;
+    </code></pre>
+  </div>
+</div>
